@@ -1,0 +1,13 @@
+import './EditPost.css'
+
+const EditPost = () => {
+    return (
+        <>
+            <div>
+                <h1>EditPost</h1>
+            </div>
+        </>
+    )
+}
+
+export default EditPost

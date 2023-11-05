@@ -1,0 +1,89 @@
+.Post {
+    width: 750px;
+    border: 1px solid #373737;
+    border-radius: 12px;
+    margin: 20px auto;
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #373737;
+    margin-bottom: 16px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.username {
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.question {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #c9631f;
+    margin-bottom: 4px;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.description {
+    color: #b4b4b4;
+    margin-bottom: 16px;
+} 
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0 20px 0 32px;
+    border-left: 1px solid #373737;
+    margin-left: 20px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.stat-card .votes {
+    cursor: pointer;
+}
+
+.stat-card span {
+    margin-right: 8px;
+}
+
+.username, .description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
