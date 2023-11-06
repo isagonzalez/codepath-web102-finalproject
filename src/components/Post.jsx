@@ -17,7 +17,7 @@ const Post = () => {
                 <div className="main-content">
                     <div className="question-box">
                         <p className="question">Question</p>
-                        <p className='description'>Description</p>
+                        <p className='description'>I have created a Kotlin application that connects to a MongoDB on Atlas to fetch some data via Spring Data JPA. For future changes to the document structure, I have experimented with</p>
                     </div>
 
                     <div className="stats">
