@@ -10,13 +10,27 @@ const App = () => {
   return (
     <>
       <div>
-        <span className="material-symbols-rounded">
-          refresh
-        </span>
-        <h1>nav bar</h1>
-        <h2>page</h2>
+        {/* NAVIGATION */}
+        <nav className="navbar">
+          <div className="navbar-logo">
+            <img src="path-to-logo.png" alt="Logo"/>
+          </div>
 
-        <p>Testing Post UI</p>
+          <div className="search-bar">
+            <input type="text" placeholder="Search..."/>
+          </div>
+
+          <div className="navbar-buttons">
+            <a className='log-in' href="#">Log In</a>
+            <a className='sign-up' href="#">Sign Up</a>
+          </div>
+        </nav>
+
+        {/* POSTS */}
+        <div className="top-page">
+          <h1>Questions</h1>
+          <button className='new-post'>Ask Question</button>
+        </div>
         <Post />
       </div>
     </>

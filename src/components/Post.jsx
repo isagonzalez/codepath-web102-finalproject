@@ -7,7 +7,6 @@ const Post = () => {
                 <div className="header">
                     <div className="user">
                         <img className="user-picture" src=""/>
-                        <div className='test'></div>
                         <p className='username'>username • 17 hr ago</p>
                     </div>
                     
@@ -17,7 +16,7 @@ const Post = () => {
                 <div className="main-content">
                     <div className="question-box">
                         <p className="question">Question</p>
-                        <p className='description'>I have created a Kotlin application that connects to a MongoDB on Atlas to fetch some data via Spring Data JPA. For future changes to the document structure, I have experimented with</p>
+                        <p className='description'>Descrition</p>
                     </div>
 
                     <div className="stats">
