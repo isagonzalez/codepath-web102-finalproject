@@ -1,6 +1,6 @@
 import './EditPost.css'
 
-const EditPost = () => {
+const EditPost = (props) => {
     return (
         <>
             <div>

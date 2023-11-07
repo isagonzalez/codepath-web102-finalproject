@@ -1,12 +1,42 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useRoutes } from 'react-router-dom'
-// import supabase from './client'
+import supabase from './client.js'
 import './App.css'
-import Post from './components/Post.jsx'
-// Import the read, create and edit pages
+import ReadPosts from './pages/ReadPosts.jsx'
+import CreatePost from './pages/CreatePost.jsx'
+import EditPost from './pages/EditPost.jsx'
 
 
 const App = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await supabase
+        .from('Posts')
+        .select()
+        setPosts(data);
+    }
+    
+    fetchPosts();
+  }, []);
+
+  let element = useRoutes([
+    {
+      path: "/",
+      element: <ReadPosts posts={posts} />
+    },
+    {
+      path:"/edit/:id",
+      element: <EditPost data={posts} />
+    },
+    {
+      path:"/new",
+      element: <CreatePost />
+    }
+  ])
+
+
   return (
     <>
       <div>
@@ -26,12 +56,8 @@ const App = () => {
           </div>
         </nav>
 
-        {/* POSTS */}
-        <div className="top-page">
-          <h1>Questions</h1>
-          <button className='new-post'>Ask Question</button>
-        </div>
-        <Post />
+        {/* MAIN CONTENT */}
+        {element}
       </div>
     </>
   )

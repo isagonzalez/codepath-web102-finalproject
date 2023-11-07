@@ -8,24 +8,6 @@
   --secondary-colour: rgb(0, 153, 255);
 }
 
-.top-page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 8px calc((100vw - 750px - 7rem)/2);
-}
-
-.top-page button {
-  background-color: var(--primary-colour);
-  color: #242424;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-family: Nunito;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-}
-
 .navbar {
   display: flex;
   align-items: center;
@@ -73,13 +55,4 @@
 .sign-up {
   background-color: var(--primary-colour);
   color: #242424;
-}
-
-@media only screen and (min-width: 1344px) {
-  .top-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 8px calc((1280px - 750px - 2rem)/2);
-  }
 }
