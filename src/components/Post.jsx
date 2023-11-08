@@ -1,10 +1,22 @@
 import './Post.css'
 import { formatDistanceToNow } from 'date-fns';
+import supabase from '../client.js'
+import { useState } from 'react';
 
 const Post = (props) => {
+    const [votes, setVotes] = useState(props.vote_count);
+
     const getPostTime = (time) => {
         const timeAgo = formatDistanceToNow(new Date(time), { addSuffix: true });
         return timeAgo;
+    }
+
+    const increaseVotes = async () => {
+        setVotes(votes + 1);
+        await supabase
+            .from('Posts')
+            .update({vote_count: votes + 1})
+            .match({id: props.id});
     }
 
     return (
@@ -26,9 +38,9 @@ const Post = (props) => {
                     </div>
 
                     <div className="stats">
-                        <div className="stat-card votes">
+                        <div className="stat-card votes" onClick={increaseVotes}>
                             <span className="material-symbols-rounded">thumb_up</span>
-                            <p>{props.vote_count} votes</p>
+                            <p>{votes} votes</p>
                         </div>
 
                         <div className="stat-card">

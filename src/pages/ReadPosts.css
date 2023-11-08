@@ -20,6 +20,10 @@ h2 {
     border: none;
 }
 
+.new-post {
+    cursor: pointer;
+}
+
 
 @media only screen and (min-width: 1344px) {
     .top-page {
@@ -28,4 +32,4 @@ h2 {
       align-items: center;
       margin: 8px calc((1280px - 750px - 2rem)/2);
     }
-  }
+}
