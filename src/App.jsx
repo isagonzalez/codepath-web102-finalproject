@@ -16,6 +16,7 @@ const App = () => {
         .from('Posts')
         .select()
         setPosts(data);
+        console.log(data);
     }
     
     fetchPosts();
@@ -43,7 +44,7 @@ const App = () => {
         {/* NAVIGATION */}
         <nav className="navbar">
           <div className="navbar-logo">
-            <img src="path-to-logo.png" alt="Logo"/>
+            <h1>Code<span className="logo">Query</span></h1>
           </div>
 
           <div className="search-bar">

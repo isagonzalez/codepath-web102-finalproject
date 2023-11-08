@@ -18,9 +18,11 @@
   padding-bottom: 20px;
 }
 
-.navbar-logo img {
-  height: 50px; /* Example size for logo */
-  width: auto;
+.navbar-logo span {
+  font-weight: 800;
+  margin-left: 3px;
+  color: var(--primary-colour);
+
 }
 
 .search-bar {
