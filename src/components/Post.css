@@ -10,6 +10,8 @@
     margin: 20px auto;
     padding: 16px;
     cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .header {

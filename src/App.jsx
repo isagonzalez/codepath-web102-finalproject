@@ -5,6 +5,7 @@ import './App.css'
 import ReadPosts from './pages/ReadPosts.jsx'
 import CreatePost from './pages/CreatePost.jsx'
 import EditPost from './pages/EditPost.jsx'
+import ViewPost from './pages/ViewPost.jsx'
 
 
 const App = () => {
@@ -16,7 +17,6 @@ const App = () => {
         .from('Posts')
         .select()
         setPosts(data);
-        console.log(data);
     }
     
     fetchPosts();
@@ -29,11 +29,15 @@ const App = () => {
     },
     {
       path:"/edit/:id",
-      element: <EditPost data={posts} />
+      element: <EditPost posts={posts} />
     },
     {
       path:"/new",
       element: <CreatePost />
+    },
+    {
+      path:"/view/:id/:question",
+      element: <ViewPost posts={posts}/>
     }
   ])
 
@@ -43,9 +47,11 @@ const App = () => {
       <div>
         {/* NAVIGATION */}
         <nav className="navbar">
-          <div className="navbar-logo">
-            <h1>Code<span className="logo">Query</span></h1>
-          </div>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <div className="navbar-logo">
+              <h1>Code<span className="logo">Query</span></h1>
+            </div>
+          </Link>
 
           <div className="search-bar">
             <input type="text" placeholder="Search..."/>

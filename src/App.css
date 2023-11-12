@@ -18,11 +18,14 @@
   padding-bottom: 20px;
 }
 
+.navbar-logo {
+  color: white;
+}
+
 .navbar-logo span {
   font-weight: 800;
   margin-left: 3px;
   color: var(--primary-colour);
-
 }
 
 .search-bar {
