@@ -4,7 +4,7 @@ Submitted by: **Isabel Gonzalez**
 
 This web app: **This website is meant to be an attempt at recreating some of the functionality of StackOverflow**
 
-Time spent: **3.5 so far** hours spent in total
+Time spent: **4.5 so far** hours spent in total
 
 ## Required Features
 
