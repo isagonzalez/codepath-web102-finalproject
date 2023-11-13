@@ -3,7 +3,12 @@
     --primary-colour-translucent: rgb(199, 98, 31, 0.25);
 }
 
-.main-page {
+
+.CreatePost .navbar .search-bar {
+    visibility: hidden;
+}
+
+.CreatePost .main-page {
     display: flex;
     flex-direction: column;
     align-items: center;

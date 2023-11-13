@@ -4,8 +4,18 @@
     --primary-colour-translucent2: rgba(199, 98, 31, 0.125);
 }
 
-.ViewPost h1 {
-    color: var(--primary-colour)
+.ViewPost .navbar .search-bar {
+    visibility: hidden;
+}
+
+.ViewPost .username {
+    margin-top: 48px;
+}
+
+.ViewPost .question {
+    color: var(--primary-colour);
+    font-size: 2.25rem;
+    font-weight: 600;
 }
 
 .ViewPost .description {

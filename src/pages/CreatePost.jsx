@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './CreatePost.css'
 import supabase from '../client.js'
+import Navigation from '../components/Navigation.jsx'
 
 const CreatePost = () => {
     const createPost = async (e) => {
@@ -29,7 +30,12 @@ const CreatePost = () => {
 
     return (
         <>
+
+        <div className='CreatePost'>
+            <Navigation />
+
             <div className='main-page'>
+
                 <h1>Ask a Question</h1>
                 <form>
                     <label htmlFor="name">Name</label><br/>
@@ -47,6 +53,7 @@ const CreatePost = () => {
                     <input type="submit" value="Submit" onClick={createPost}/>
                 </form>
             </div>
+        </div>
         </>
     )
 }

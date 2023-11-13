@@ -2,15 +2,20 @@ import './ViewPost.css'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Post from '../components/Post.jsx'
+import Navigation from '../components/Navigation.jsx'
+import { set } from 'date-fns'
+import supabase from '../client.js'
 
 const ViewPost = (props) => {
     const { id, question } = useParams();
     const post = props.posts.filter(item => item.id == id)[0];
-
+    const [votes, setVotes] = useState(post.vote_count);
 
     useEffect(() => {
         console.log("POST")
         console.log(post)
+        console.log("VOTES")
+        console.log(votes)
     }, []);
     
     const getPostTime = (time) => {
@@ -38,19 +43,28 @@ const ViewPost = (props) => {
         }
     }
 
+    const increaseVotes = async () => {
+        setVotes(votes + 1);
+        await supabase
+            .from('Posts')
+            .update({vote_count: votes + 1})
+            .match({id: post.id});
+    }
+
     return (
         <>
-                <Post key={post.id} id={post.id} created_at={post.created_at} name={post.name} question={post.question} description={post.description} answer_count={post.answer_count} view_count={post.view_count} vote_count={post.vote_count}/>
             <div className='ViewPost'>
+                <Navigation />
+
 
                 <p className='username'>{post.name}<span className="time-ago"> • {getPostTime(post.created_at)}</span></p>
-                <h1>{post.question}</h1>
+                <h1 className='question'>{post.question}</h1>
                 <p className='description'>{post.description}</p>
 
                 <div className="cta">
-                    <div className="vote">
+                    <div className="vote" onClick={increaseVotes}>
                         <span className="material-symbols-rounded">thumb_up</span>
-                        <p>{post.vote_count}</p>
+                        <p>{votes}</p>
                     </div>
                     <div className="answers">
                         <span className="material-symbols-rounded">forum</span>
