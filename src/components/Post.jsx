@@ -55,7 +55,9 @@ const Post = (props) => {
                                 <p className='username'>{props.name}<span className="time-ago"> •   {getPostTime(props.created_at)}</span></p>
                             </div>
                             
-                            <span className="material-symbols-rounded">more_horiz</span>
+                            <Link to={'edit/'+ getLink()}  style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <span className="material-symbols-rounded">more_horiz</span>
+                            </Link>
                         </div>
 
                         <div className="main-content">

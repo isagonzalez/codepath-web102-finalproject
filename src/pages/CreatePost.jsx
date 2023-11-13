@@ -21,7 +21,7 @@ const CreatePost = () => {
         description: '',
     });
 
-    const hangdleChange = (e) => {
+    const handleChange = (e) => {
         setPost({
             ...post,
             [e.target.name]: e.target.value,
@@ -31,29 +31,29 @@ const CreatePost = () => {
     return (
         <>
 
-        <div className='CreatePost'>
-            <Navigation />
+            <div className='CreatePost'>
+                <Navigation />
 
-            <div className='main-page'>
+                <div className='main-page'>
 
-                <h1>Ask a Question</h1>
-                <form>
-                    <label htmlFor="name">Name</label><br/>
-                    <input type="text" id="name" name="name" placeholder='anonymous' onChange={hangdleChange}/><br/>
-                    <br/>
+                    <h1>Ask a Question</h1>
+                    <form>
+                        <label htmlFor="name">Name</label><br/>
+                        <input type="text" id="name" name="name" placeholder='anonymous' onChange={handleChange}/><br/>
+                        <br/>
 
-                    <label htmlFor="question"><span className='required'>*</span> Question</label><br/>
-                    <textarea id="question" name="question" required onChange={hangdleChange}></textarea><br/>
-                    <br/>
+                        <label htmlFor="question"><span className='required'>*</span> Question</label><br/>
+                        <textarea id="question" name="question" required onChange={handleChange}></textarea><br/>
+                        <br/>
 
-                    <label htmlFor="description"><span className='required'>*</span> Description</label><br/>
-                    <textarea id="description" name="description" required onChange={hangdleChange}></textarea><br/>
-                    <br/>
+                        <label htmlFor="description"><span className='required'>*</span> Description</label><br/>
+                        <textarea id="description" name="description" required onChange={handleChange}></textarea><br/>
+                        <br/>
 
-                    <input type="submit" value="Submit" onClick={createPost}/>
-                </form>
+                        <input type="submit" value="Submit" onClick={createPost}/>
+                    </form>
+                </div>
             </div>
-        </div>
         </>
     )
 }

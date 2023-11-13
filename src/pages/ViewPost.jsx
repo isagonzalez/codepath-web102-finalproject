@@ -5,6 +5,7 @@ import Post from '../components/Post.jsx'
 import Navigation from '../components/Navigation.jsx'
 import { set } from 'date-fns'
 import supabase from '../client.js'
+import { formatDistanceToNow } from 'date-fns'
 
 const ViewPost = (props) => {
     const { id, question } = useParams();

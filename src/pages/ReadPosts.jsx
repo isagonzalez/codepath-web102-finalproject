@@ -9,8 +9,11 @@ const ReadPosts = (props) => {
     const [posts, setPosts] = useState([]);
     const [filteredResults, setFilteredResults] = useState([]);
     const [searchInput, setSearchInput] = useState('');
+    const [sortInput, setSortInput] = useState('newest');
 
     useEffect(() => {
+        setSearchInput('');
+        setSortInput('newest');
         setPosts(props.posts);
         setFilteredResults(props.posts);
     }, [props]);
@@ -33,6 +36,24 @@ const ReadPosts = (props) => {
         }
 
         setFilteredResults(newList);
+    }
+
+    const sortPosts = (sortValue) => {
+        setSortInput(sortValue);
+
+        let sortedList = [...filteredResults];
+
+        if (sortValue === "newest") {
+            sortedList.sort((a, b) => {
+                return new Date(b.created_at) - new Date(a.created_at);
+            });
+        } else if (sortValue === "popular") {
+            sortedList.sort((a, b) => {
+                return b.vote_count - a.vote_count;
+            });
+        } 
+
+        setFilteredResults(sortedList);
     }
 
     return (
@@ -62,6 +83,14 @@ const ReadPosts = (props) => {
                     <Link to="/new"><button className='new-post'>Ask Question</button></Link>
                 </div>
                 
+                <div className="sort-options">
+                    <label htmlFor="sort">Sort by:</label>
+                    <select name="sort" id="sort" onChange={(inputString) => sortPosts(inputString.target.value)}>
+                        <option value="newest">Newest</option>
+                        <option value="popular"> Most Popular</option>
+                    </select>
+                </div>
+
                 {
                     filteredResults && filteredResults.length > 0 ? 
                     filteredResults.map((post) => 

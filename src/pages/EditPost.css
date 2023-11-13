@@ -1,0 +1,72 @@
+:root {
+    --primary-colour: rgb(199, 98, 31);
+    --primary-colour-translucent: rgb(199, 98, 31, 0.25);
+}
+
+
+.EditPost .navbar .search-bar {
+    visibility: hidden;
+}
+
+.EditPost .main-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
+}
+
+input, textarea {
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-family: Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+input[type="text"] {
+    width: 500px;
+    padding-left: 12px;
+}
+
+input[type="submit"] {
+    width: 100px;
+    background-color: var(--primary-colour);
+    color: #242424;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+label {
+    font-size: 20px;
+}
+
+textarea {
+    width: 490px;
+    height: 100px;
+    padding: 12px;
+}
+
+.required {
+    color: rgb(208, 11, 11);
+    font-weight: bold;
+}
+
+.EditPost .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 32px;
+}
+.EditPost .delete-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(142, 25, 25);
+    width: 50px;
+    border-radius: 8px;
+}
+
+.EditPost .delete-post span {
+    padding: 12px;
+}

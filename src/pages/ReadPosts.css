@@ -2,11 +2,21 @@ h2 {
     text-align: center;
 }
 
-.top-page {
+.top-page, .sort-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 8px calc((100vw - 750px - 7rem)/2);
+}
+
+.sort-options {
+    justify-content: end;
+}
+
+.sort-options select {
+    margin-left: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
 .top-page button {
@@ -26,10 +36,14 @@ h2 {
 
 
 @media only screen and (min-width: 1344px) {
-    .top-page {
+    .top-page, .sort-options {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 8px calc((1280px - 750px - 2rem)/2);
+    }
+
+    .sort-options {
+        justify-content: end;
     }
 }

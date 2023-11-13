@@ -28,7 +28,7 @@ const App = () => {
       element: <ReadPosts posts={posts} />
     },
     {
-      path:"/edit/:id",
+      path:"/edit/:id/:question",
       element: <EditPost posts={posts} />
     },
     {
