@@ -1,0 +1,20 @@
+.Comment {
+    width: 750px;
+    border: 1px solid #373737;
+    border-radius: 12px;
+    margin: 20px 0px;
+    padding: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.Comment .content {
+    font-size: 1.2rem;
+    color: #b4b4b4;
+}
+
+.Comment .username {
+    margin-top: 0px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #373737;
+}

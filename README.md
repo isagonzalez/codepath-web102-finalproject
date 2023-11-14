@@ -4,7 +4,7 @@ Submitted by: **Isabel Gonzalez**
 
 This web app: **This website is meant to be an attempt at recreating some of the functionality of StackOverflow**
 
-Time spent: **4.5 so far** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 
@@ -18,7 +18,7 @@ The following **required** functionality is completed:
 - [x] **Users can sort posts by either their created time or upvotes count**
 - [x] **Users can search for posts by title**
 - [x] **A separate post page for each created post, where any additional information is shown is linked whenever a user clicks a post**
-- [ ] **Users can leave comments underneath a post on the post's separate page**
+- [x] **Users can leave comments underneath a post on the post's separate page**
 - [x] **Each post should have an upvote button on the post's page. Each click increases its upvotes count by one and users can upvote any number of times**
 - [x] **A previously created post can be edited or deleted from its post page**
 
@@ -41,7 +41,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='walkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with Kap
 

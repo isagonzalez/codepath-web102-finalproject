@@ -6,6 +6,7 @@ import ReadPosts from './pages/ReadPosts.jsx'
 import CreatePost from './pages/CreatePost.jsx'
 import EditPost from './pages/EditPost.jsx'
 import ViewPost from './pages/ViewPost.jsx'
+import CreateComment from './pages/CreateComment.jsx'
 
 
 const App = () => {
@@ -32,12 +33,16 @@ const App = () => {
       element: <EditPost posts={posts} />
     },
     {
-      path:"/new",
+      path:"/newPost",
       element: <CreatePost />
     },
     {
       path:"/view/:id/:question",
       element: <ViewPost posts={posts}/>
+    },
+    {
+      path:"/newComment/:id",
+      element: <CreateComment />
     }
   ])
 

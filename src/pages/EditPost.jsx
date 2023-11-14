@@ -51,11 +51,11 @@ const EditPost = (props) => {
                         <input type="text" id="name" name="name" placeholder='anonymous' value={updatedPost.name} onChange={handleChange}/><br/>
                         <br/>
 
-                        <label htmlFor="question"><span className='required'>*</span> Question</label><br/>
+                        <label htmlFor="question"><span className='required'>*</span> Subject</label><br/>
                         <textarea id="question" name="question" required  value={updatedPost.question} onChange={handleChange}></textarea><br/>
                         <br/>
 
-                        <label htmlFor="description"><span className='required'>*</span> Description</label><br/>
+                        <label htmlFor="description"><span className='required'>*</span> Describe your problem</label><br/>
                         <textarea id="description" name="description" required  value={updatedPost.description} onChange={handleChange}></textarea><br/>
                         <br/>
 

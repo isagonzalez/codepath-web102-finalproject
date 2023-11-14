@@ -2,14 +2,18 @@ h2 {
     text-align: center;
 }
 
-.top-page, .sort-options {
+.ReadPosts .main-content {
+    width: 782px;
+    margin: auto;
+}
+
+.ReadPosts .top-page, .ReadPosts .sort-options {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 8px calc((100vw - 750px - 7rem)/2);
 }
 
-.sort-options {
+.ReadPosts .sort-options {
     justify-content: end;
 }
 
@@ -32,18 +36,4 @@ h2 {
 
 .new-post {
     cursor: pointer;
-}
-
-
-@media only screen and (min-width: 1344px) {
-    .top-page, .sort-options {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 8px calc((1280px - 750px - 2rem)/2);
-    }
-
-    .sort-options {
-        justify-content: end;
-    }
 }

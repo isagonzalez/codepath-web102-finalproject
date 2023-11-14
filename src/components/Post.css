@@ -47,7 +47,7 @@
     color: #9d9d9d;
 }
 
-.main-content {
+.Post .main-content {
     display: flex;
     justify-content: space-between;
     align-items: start;
@@ -85,9 +85,10 @@
 
 .stat-card {
     display: flex;
+    justify-content: center;
     align-items: center;
     font-size: 0.9rem;
-    padding: 0 8px;
+    padding-right: 20px;
     border-radius: 12px;
 }
 
@@ -97,10 +98,10 @@
 }
 
 .stat-card span {
-    margin-right: 8px;
+    margin: 0 8px;
 }
 
-.username, .question, .description {
+.Post .username, .Post .question, .Post .description {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;

@@ -1,22 +1,35 @@
 import './ViewPost.css'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Post from '../components/Post.jsx'
 import Navigation from '../components/Navigation.jsx'
 import { set } from 'date-fns'
 import supabase from '../client.js'
 import { formatDistanceToNow } from 'date-fns'
+import { Link } from 'react-router-dom'
+import Comment from '../components/Comment.jsx'
 
 const ViewPost = (props) => {
     const { id, question } = useParams();
     const post = props.posts.filter(item => item.id == id)[0];
     const [votes, setVotes] = useState(post.vote_count);
+    const [comments, setComments] = useState([]);
 
     useEffect(() => {
         console.log("POST")
         console.log(post)
         console.log("VOTES")
         console.log(votes)
+        console.log("FETCH COMMENTS")
+
+        const fetchComments = async () => {
+            const { data } = await supabase
+              .from('Comments')
+              .select()
+              .eq('post_id', id)
+              setComments(data);
+          }
+          
+        fetchComments();
     }, []);
     
     const getPostTime = (time) => {
@@ -57,23 +70,41 @@ const ViewPost = (props) => {
             <div className='ViewPost'>
                 <Navigation />
 
+                <div className="main-content">
+                    <p className='username'>{post.name}<span className="time-ago"> • {getPostTime(post.created_at)}</span></p>
+                    <h1 className='question'>{post.question}</h1>
+                    <p className='description'>{post.description}</p>
 
-                <p className='username'>{post.name}<span className="time-ago"> • {getPostTime(post.created_at)}</span></p>
-                <h1 className='question'>{post.question}</h1>
-                <p className='description'>{post.description}</p>
+                    <div className="cta">
+                        <div className="vote" onClick={increaseVotes}>
+                            <span className="material-symbols-rounded">thumb_up</span>
+                            <p>{votes}</p>
+                        </div>
+                        <div className="answers">
+                            <span className="material-symbols-rounded">forum</span>
+                            <p className='num-answers'>{post.answer_count}</p>
+                        </div>
+                        <div className="share">
+                            <span className="material-symbols-rounded">ios_share</span>
+                            <p>Share</p>
+                        </div>
+                    </div>
 
-                <div className="cta">
-                    <div className="vote" onClick={increaseVotes}>
-                        <span className="material-symbols-rounded">thumb_up</span>
-                        <p>{votes}</p>
-                    </div>
-                    <div className="answers">
-                        <span className="material-symbols-rounded">forum</span>
-                        <p className='num-answers'>{post.answer_count}</p>
-                    </div>
-                    <div className="share">
-                        <span className="material-symbols-rounded">ios_share</span>
-                        <p>Share</p>
+                    <div className="comments">
+                        <h2>Comments</h2>
+
+                        <div className="add-comment">
+                            <span className="material-symbols-rounded">add</span>
+                            <Link to={'/newComment/' + id} style={{ textDecoration: 'none', color: 'inherit' }}><button className='new-comment'>Add a comment</button></Link>
+                        </div>
+
+                        {
+                            comments && comments.length > 0 ? 
+                            comments.map((comment) => 
+                                <Comment key={comment.id} id={comment.id} created_at={comment.created_at} name={comment.name} content={comment.content} post_id={comment.post_id}/>
+                            )
+                            : <h2>{"No Comments Yet"}</h2>
+                        }
                     </div>
                 </div>
             </div>

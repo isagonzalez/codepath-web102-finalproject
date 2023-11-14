@@ -58,7 +58,7 @@ const ReadPosts = (props) => {
 
     return (
         <>
-            <div>
+            <div className='ReadPosts'>
                 <nav className="navbar">
                     <Link to="/" style={{ textDecoration: 'none' }}>
                         <div className="navbar-logo">
@@ -78,26 +78,28 @@ const ReadPosts = (props) => {
                     </div>
                 </nav>
 
-                <div className="top-page">
-                    <h1>Questions</h1>
-                    <Link to="/new"><button className='new-post'>Ask Question</button></Link>
-                </div>
-                
-                <div className="sort-options">
-                    <label htmlFor="sort">Sort by:</label>
-                    <select name="sort" id="sort" onChange={(inputString) => sortPosts(inputString.target.value)}>
-                        <option value="newest">Newest</option>
-                        <option value="popular"> Most Popular</option>
-                    </select>
-                </div>
+                <div className="main-content">
+                    <div className="top-page">
+                        <h1>Questions</h1>
+                        <Link to="/newPost"><button className='new-post'>Ask Question</button></Link>
+                    </div>
+                    
+                    <div className="sort-options">
+                        <label htmlFor="sort">Sort by:</label>
+                        <select name="sort" id="sort" onChange={(inputString) => sortPosts(inputString.target.value)}>
+                            <option value="newest">Newest</option>
+                            <option value="popular"> Most Popular</option>
+                        </select>
+                    </div>
 
-                {
-                    filteredResults && filteredResults.length > 0 ? 
-                    filteredResults.map((post) => 
-                        <Post key={post.id} id={post.id} created_at={post.created_at} name={post.name} question={post.question} description={post.description} answer_count={post.answer_count} view_count={post.view_count} vote_count={post.vote_count}/>
-                    )
-                    : <h2>{"No Questions Yet"}</h2>
-                }
+                    {
+                        filteredResults && filteredResults.length > 0 ? 
+                        filteredResults.map((post) => 
+                            <Post key={post.id} id={post.id} created_at={post.created_at} name={post.name} question={post.question} description={post.description} answer_count={post.answer_count} view_count={post.view_count} vote_count={post.vote_count}/>
+                        )
+                        : <h2>{"No Questions Yet"}</h2>
+                    }
+                </div>
             </div>
         </>
     )
